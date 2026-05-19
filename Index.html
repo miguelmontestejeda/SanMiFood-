@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanMiFood</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<!-- HEADER SUPERIOR -->
+<div class="contenedor">
+  <div class="top">
+    <h1>SanMiFood</h1>
+  </div>
+
+  <div class="bottom">
+    <h2>Del restaurante a tu mesa</h2>
+  </div>
+</div>
+
+<header>
+
+    <!-- NAVBAR -->
+    <div class="menucontainer" id="menuNav">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" onclick="volverInicio()">Inicio</a></li>
+                <li><a href="Lugares.html">Lugares</a></li>
+                <li><a href="#seccionComida">Comida</a></li>
+                <li><a href="#" onclick="mostrarCarrito()">🛒 <span id="contadorCarrito">0</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+        <!--INICIO SESION-->
+    <div class="form-container" id="seccionInicioSesion">
+
+        <h2>Iniciar Sesión</h2>
+
+        <div class="input-group">
+            <label>Correo</label>
+            <input type="email" id="CorreoLogin" placeholder="Ingresa tu correo">
+        </div>
+
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" id="PasswordLogin" placeholder="Ingresa tu contraseña">
+        </div>
+
+        <div class="buttons">
+            <button id="btnIniciarSesion">Iniciar Sesión</button>
+        </div>
+
+        <p style="margin-top:15px; text-align:center;">
+            ¿No tienes cuenta?
+            <a href="#" id="irRegistro">Registrarse</a>
+        </p>
+
+    </div>
+
+    <!-- REGISTRAR USUARIO -->
+    <div class="form-container" id="seccionLogin">
+
+        <h2>Registro de Usuario</h2>
+
+        <div class="input-group">
+            <label>Nombre</label>
+            <input type="text" id="Nombre" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="input-group">
+            <label>Dirección</label>
+            <input type="text" id="Direccion" placeholder="Ingresa tu dirección">
+        </div>
+
+        <div class="input-group">
+            <label>Teléfono</label>
+            <input type="text" id="Telefono" placeholder="Ingresa tu teléfono">
+        </div>
+
+        <div class="input-group">
+            <label>Correo</label>
+            <input type="email" id="Correo" placeholder="Ingresa tu correo">
+        </div>
+
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" id="Password" placeholder="Ingresa tu contraseña">
+        </div>
+
+        <div class="buttons">
+            <button id="btnGuardar">Guardar</button>
+        </div>
+
+        <p style="margin-top:15px; text-align:center;">
+            ¿Ya tienes cuenta?
+            <a href="#" id="irLogin">Iniciar sesión</a>
+        </p>
+
+    </div>
+
+    <p id="mensaje"></p>
+
+
+    <!-- INICIO -->
+    <div id="seccionInicio">
+
+        <div class="top-bar">
+            <button id="btnCerrarSesion" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+
+        <div class="contenedor-tarjetas">
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('tacos')">
+                    <img src="Imagenes/tacos.jpg">
+                    <div class="contenido">
+                        <h3>Tacos</h3>
+                        <p>Los mejores tacos de una bonita localidad</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('pizzas')">
+                    <img src="Imagenes/Pizza.jpeg">
+                    <div class="contenido">
+                        <h3>Pizzas</h3>
+                        <p>Pizzas hechas con ingredientes de calidad</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('hamburguesas')">
+                    <img src="Imagenes/Hamburguesas.jpeg">
+                    <div class="contenido">
+                        <h3>Hamburguesas</h3>
+                        <p>Las mejores hamburguesas de la localidad</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('birria')">
+                    <img src="Imagenes/Birria 2.jpeg">
+                    <div class="contenido">
+                        <h3>Birria</h3>
+                        <p>Una opción rica y auténtica</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('postres')">
+                    <img src="Imagenes/postres.jpeg">
+                    <div class="contenido">
+                        <h3>Postres</h3>
+                        <p>Endulza tu día con los mejores postres</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tarjeta">
+                <a href="javascript:void(0)" onclick="mostrarCategoria('bebidas')">
+                    <img src="Imagenes/Bebidas.jpeg">
+                    <div class="contenido">
+                        <h3>Bebidas</h3>
+                        <p>Las mejores bebidas para acompañar</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- PRODUCTOS -->
+        <section id="seccionProductos">
+
+            <h2 id="tituloCategoria"></h2>
+
+            <div class="contenedor-productos" id="contenedorProductos">
+
+            </div>
+
+        </section>
+
+        <!-- INFO -->
+        <section class="info">
+            <div class="info-content container">
+
+                <div class="info-txt">
+                    <p>SanMiFood</p>
+                    <h2>Información</h2>
+
+                    <div class="info-sec">
+                        <div class="info-1">
+                            <h3>¿Por qué usar SanMiFood?</h3>
+                            <p>Es una página confiable que te da opciones de comida</p>
+                        </div>
+
+                        <div class="info-2">
+                            <p>Encuentra comida en un solo click</p>
+                        </div>
+
+                        <div class="info-3">
+                            <p>Se adapta a tus necesidades</p>
+                        </div>
+
+                        <div class="info-4">
+                            <p>Descubre nuevos lugares para comer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-img">
+                    <img src="Imagenes/menuopciones.jpg">
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</header>
+
+    <!-- CARRITO MODAL -->
+    <div id="modalCarrito" class="modal-carrito" style="display:none;">
+        <div class="carrito-contenido">
+            <h2>🛒 Tu carrito</h2>
+            <div id="contenedorCarrito"></div>
+            <h3 id="totalCarrito"></h3>
+            <button onclick="cerrarCarrito()">Cerrar</button>
+
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
